@@ -1,21 +1,22 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
-
-:root{
-    --primary:#00E0FF;
-    --secoundary:#475DD2;
-    --confirm:#00E676;
-    --error:#F44336;
-    --disable:#BDBDBD;
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap');
+:root {
+    /* Theme Colors */
+    --primary: #00E0FF;
+    --secoundary: #475DD2;
+    --confirm: #00E676;
+    --error: #F44336;
+    --disable: #BDBDBD;
     --white: #fff;
     --black: #000;
+
+    /* font wheight */
+    --thin: 300;
+    --medium: 400;
+    --bold: 600;
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-}
-
-h2{
-    color: var(--white);
 }
