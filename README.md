@@ -66,7 +66,7 @@ Tempo estimado de trabalho bruto: 6~8 meses
 - [ ] Style CSS Table:
       >[Style CSS Table](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_table_zebra)
 
-- [ x ] Login Social:
+- [x] Login Social:
       >[Login Social](https://www.w3schools.com/howto/howto_css_social_login.asp)
 
 
