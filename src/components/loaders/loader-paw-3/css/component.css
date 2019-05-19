@@ -1,4 +1,5 @@
-:root{
+:root {
+    --time: 2s;
     --step: .5;
     --translate: 50px;
 }
@@ -18,7 +19,7 @@
     margin: auto;
 }
 
-.loading-dots > .bounce,.bounce2 {
+.loading-dots>.bounce, .bounce2 {
     width: 2.5rem;
     height: 2.5rem;
     background-image: url(../../../../../media/icons/Pata.svg);
@@ -28,24 +29,26 @@
 }
 
 .loading-dots .bounce {
-    animation-delay: 1s;
-    animation: 2s transform-left infinite both;
+    /* animation-delay: 1s; */
+    animation: var(--time) transform-left infinite both;
 }
 
 .loading-dots .bounce2 {
-    /* animation-delay: 1s; */
-    animation: 2s transform-right infinite both;
+    animation: var(--time) transform-right infinite both;
 }
 
 @keyframes transform-left {
     0% {
-        transform: translateY(calc(var(--translate)*-1)) scale(1);
+        transform: translateY(calc(var(--translate)*-1)) scale(1) rotate(0deg);
+    }
+    42%{
+        opacity: 0;
     }
     50% {
-        transform: translateY(var(--translate)) scale(var(--step));
+        transform: translateY(var(--translate)) scale(var(--step)) rotate(0deg);
     }
     100% {
-        transform: translateY(calc(var(--translate)*-1)) scale(1);
+        transform: translateY(calc(var(--translate)*-1)) scale(1) rotate(20deg);
     }
 }
 
