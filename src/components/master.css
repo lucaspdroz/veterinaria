@@ -5,7 +5,9 @@
     --secoundary: #475DD2;
     --confirm: #00E676;
     --error: #F44336;
+    --thumb: #555;
     --disable: #BDBDBD;
+    --ice: #f1f1f1;
     --white: #fff;
     --black: #000;
     /* font wheight */
@@ -39,12 +41,14 @@ body {
 .bold {
     font-weight: var(--bold);
 }
+
 /* When Clicked  make an animation*/
-button:active{
+
+button:active {
     transform: scale(0.9);
 }
 
-button:focus{
+button:focus {
     outline: none;
 }
 
@@ -67,4 +71,30 @@ button:focus{
     height: var(--s-big);
     border: none;
     border-radius: 100%;
+}
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: var(--ice);
+    border-radius: 100px;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: var(--disable);
+    border-radius: 100px;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--thumb);
 }
