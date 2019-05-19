@@ -12,11 +12,14 @@
     --thin: 300;
     --medium: 400;
     --bold: 600;
-
     /* size */
     --s-small: 50px;
     --s-medium: 75px;
     --s-big: 100px;
+    /* font size to icons */
+    --i-small: 1.5rem;
+    --i-medium: 2rem;
+    --i-big: 3rem;
 }
 
 body {
@@ -25,16 +28,24 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.thin{
+.thin {
     font-weight: var(--thin);
 }
 
-.medium{
+.medium {
     font-weight: var(--medium);
 }
 
-.bold{
+.bold {
     font-weight: var(--bold);
+}
+/* When Clicked  make an animation*/
+button:active{
+    transform: scale(0.9);
+}
+
+button:focus{
+    outline: none;
 }
 
 .btn-round-small {

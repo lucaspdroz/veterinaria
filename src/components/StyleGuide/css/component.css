@@ -1,8 +1,31 @@
-body{
+body {
     background: var(--confirm);
+    display: flex;
+}
+
+.wraper {
+    margin: 15vh auto;
 }
 
 h2 {
     color: var(--white);
     font-weight: var(--medium);
+}
+
+.btn-round-small {
+    background: var(--primary);
+    color: var(--white);
+    font-size: var(--i-small);
+}
+
+.btn-round-medium {
+    background: var(--primary);
+    color: var(--white);
+    font-size: var(--i-medium);
+}
+
+.btn-round-big {
+    background: var(--primary);
+    color: var(--white);
+    font-size: var(--i-big);
 }
