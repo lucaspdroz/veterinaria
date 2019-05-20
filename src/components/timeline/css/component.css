@@ -4,11 +4,6 @@
     padding: 0px;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
-body{
-    font-family:  'Nunito', sans-serif;
-}
-
 .timeline{
     background-color: #bdbdbd;
     position: relative;
@@ -44,7 +39,7 @@ body{
     position: absolute;
     width: 10px;
     height: 10px;
-    right: 0px;
+    right: -1px;
     background-color: white;
     border: 1px solid #00E0FF;
     top: 78px;
