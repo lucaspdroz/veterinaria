@@ -2,6 +2,7 @@
   background-color: var(--disable);
   position: relative;
   max-width: 1200px;
+  min-width: 500px;
   margin: 45px auto;
   border-radius: 1%;
 }
@@ -15,8 +16,8 @@
   position: absolute;
   width: 2px;
   background-color: var(--primary);
-  top: 20px;
-  bottom: 0;
+  top: 16px;
+  bottom: 16px;
   left: 50%;
   margin-left: -3px;
 }
@@ -26,6 +27,7 @@
   position: relative;
   background-color: inherit;
   width: 50%;
+  padding: 19px 40px 19px 0px;
 }
 
 .container::after {
@@ -59,3 +61,29 @@
   position: relative;
   border-radius: 6px;
 }
+
+@media screen and (max-width: 600px) {
+  .timeline::after {
+  left: 20px;
+  top: 20px;
+  bottom: 20px;
+  }
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  .container::before {
+  left: 10px;
+  margin: 
+  padding-left: 0px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+  .left::after{
+  left: -25.6px;
+  }
+  .rigth::after{
+  left: -255.6px;
+  }
