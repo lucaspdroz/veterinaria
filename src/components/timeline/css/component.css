@@ -1,73 +1,61 @@
-*{
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
+.timeline {
+  background-color: var(--disable);
+  position: relative;
+  max-width: 1200px;
+  margin: 45px auto;
+  border-radius: 1%;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
-body{
-    font-family:  'Nunito', sans-serif;
-}
-
-.timeline{
-    background-color: #bdbdbd;
-    position: relative;
-    max-width: 1200px;
-    margin: 45px auto;
-    border-radius: 1%;
-}
-
-.timeline ul{
-    list-style: none;
+.timeline ul {
+  list-style: none;
 }
 
 .timeline::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: #00E0FF;
-    top: 20px;
-    bottom: 0;
-    left: 50%;
-    margin-left: -3px;
-  }
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: var(--primary);
+  top: 20px;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
 
-  .container {
-    padding: 10px 40px;
-    position: relative;
-    background-color: inherit;
-    width: 50%;
-  }
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
 
-  .container::after {
-    content: '';
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    right: -29px;
-    background-color: white;
-    border: 4px solid #00E0FF;
-    top: 15px;
-    border-radius: 50%;
-    z-index: 1;
-  }
+.container::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  right: 18.5px;
+  background-color: var(--white);
+  border: 1px solid var(--primary);
+  top: 50%;
+  border-radius: 50%;
+  z-index: 1;
+}
 
-  .left{
-      left: 0;
-  }
+.left {
+  left: 0;
+}
 
-  .rigth{
-      left: 50%;
-  }
+.rigth {
+  left: 50%;
+}
 
-  .rigth::after {
-    left: -29px;
-  }
+.rigth::after {
+  left: -25.6px;
+}
 
-  .content {
-    padding: 20px 30px;
-    background-color: white;
-    position: relative;
-    border-radius: 6px;
-  }
-  
+.content {
+  padding: 20px 30px;
+  background-color: var(--white);
+  position: relative;
+  border-radius: 6px;
+}

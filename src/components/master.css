@@ -24,6 +24,10 @@
     --i-big: 3rem;
 }
 
+*{
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
