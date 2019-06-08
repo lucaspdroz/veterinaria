@@ -79,3 +79,17 @@ Tempo estimado de trabalho bruto: 6~8 meses
 
 - [ ] Animation icons (Quando o projeto estiver bem avançado):
       >[Animation icons](https://www.w3schools.com/howto/howto_js_animate_icons.asp)
+
+
+## Authors
+|[<img src="https://avatars2.githubusercontent.com/u/17989796?s=460&v=4"><br><sub>@lucaspdroz</sub>](https://github.com/lucaspdroz) |
+| :---: |
+
+|[<img src="https://avatars2.githubusercontent.com/u/42346794?s=460&v=4"><br><sub>@lucasTovo</sub>](https://github.com/lucasTovo) |
+| :---: |
+
+|[<img src="https://avatars3.githubusercontent.com/u/42684243?s=460&v=4"><br><sub>@GiovaniBoff</sub>](https://github.com/GiovaniBoff) |
+| :---: |
+
+|[<img src="https://avatars3.githubusercontent.com/u/48337261?s=460&v=4"><br><sub>@evandroLutz</sub>](https://github.com/evandroLutz) |
+| :---: |
