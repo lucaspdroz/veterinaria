@@ -10,7 +10,7 @@ h2 {
 #content-aside {
     overflow: auto;
     height: 100vh;
-    width: 10vw;
+    width: 400px;
     color: var(--white);
     background: #000;
 }
