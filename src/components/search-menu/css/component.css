@@ -1,0 +1,9 @@
+body{}
+
+    background: var(--confirm);
+}
+
+h2 {
+    color: var(--white);
+    font-weight: var(--medium);
+}
