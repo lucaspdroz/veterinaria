@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <form id="login-form" method="post">
+        <label for="nome_cliente">nome cliente</label>
+        <input id="nome_cliente" type="text" name="nome_cliente" required="required"/>
+        <label for="celular" >celular</label>
+        <input id="celular" type="text" name="celular" required="required">
+        <label for="email">email</label>
+        <input id="email" type="email" name="email" required="required">
+        <label for="theDate">Data de Hoje </label>
+        <input type="date" id="theDate" required="required">
+        <button type="submit">Adicionar</button>
+    </form>
+</body>
+
+<script>
+
+    let url = "https://cantinho-dos-travessos.firebaseio.com/cliente.json";
+
+    function getToday() {
+        let date = new Date();
+
+        let day = date.getDate();
+        let month = date.getMonth() + 1;
+        let year = date.getFullYear();
+
+        if (month < 10) month = "0" + month;
+        if (day < 10) day = "0" + day;
+
+        let today = year + "-" + month + "-" + day;
+        return today;
+    }
+
+    document.getElementById('theDate').value = getToday();
+
+    // bla
+
+    let bla = document.getElementById('login-form');
+
+    let form = new FormData(document.getElementById('login-form'));
+
+    bla.addEventListener("keyup", function(){
+        console.log(bla.nome_cliente.value, " ", bla.celular.value," ", bla.email.value ," ", bla.theDate.value);
+    });
+
+
+    fetch(url, {
+        method: "POST",
+        body: form
+    });
+</script>
+
+</html>
