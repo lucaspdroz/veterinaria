@@ -69,7 +69,7 @@ fetch(url)
     
     for(let i in clientes){
         console.log(clientes[i]);
-        console.log(clientes[i].email);
+        // console.log(clientes[i].email);
     }
 
     // for (let ind in clientes) {

@@ -12,20 +12,20 @@
 <body>
     <form id="login-form" method="post">
         <label for="nome_cliente">nome cliente</label>
-        <input id="nome_cliente" type="text" name="nome_cliente" required="required"/>
-        <label for="celular" >celular</label>
+        <input id="nome_cliente" type="text" name="nome_cliente" required="required" />
+        <label for="celular">celular</label>
         <input id="celular" type="text" name="celular" required="required">
         <label for="email">email</label>
         <input id="email" type="email" name="email" required="required">
         <label for="theDate">Data de Hoje </label>
         <input type="date" id="theDate" required="required">
-        <button type="submit">Adicionar</button>
+        <button type="submit" onclick="send()">Adicionar</button>
     </form>
 </body>
 
 <script>
 
-    let url = "https://cantinho-dos-travessos.firebaseio.com/cliente.json";
+    let url = "https://cantinho-dos-travessos.firebaseio.com/cliente.json?nome";
 
     function getToday() {
         let date = new Date();
@@ -43,21 +43,38 @@
 
     document.getElementById('theDate').value = getToday();
 
-    // bla
+    // myFullForm
 
-    let bla = document.getElementById('login-form');
+    // let form = new FormData(document.getElementById('login-form'));
+    let myFullForm = document.getElementById('login-form');
+    let customerInfo = null;
+    myFullForm.addEventListener("keyup", function () {
+        myForm = [myFullForm.nome_cliente.value, myFullForm.celular.value, myFullForm.email.value, myFullForm.theDate.value];
 
-    let form = new FormData(document.getElementById('login-form'));
+        let nome_cliente = myFullForm.nome_cliente.value;
+        let celular = myFullForm.celular.value;
+        let email = myFullForm.email.value;
+        let theDate = myFullForm.theDate.value;
 
-    bla.addEventListener("keyup", function(){
-        console.log(bla.nome_cliente.value, " ", bla.celular.value," ", bla.email.value ," ", bla.theDate.value);
+        customerInfo = {
+            "nome_cliente": nome_cliente,
+            "celular": celular,
+            "email": email,
+            "theDate": theDate
+        }
+        // console.log(customerInfo);
     });
 
+    function send() {
+        debugger;
+        console.log(customerInfo);
+        fetch(url, {
+            headers: { "Content-Type": "application/json" },
+            method: "POST",
+            body: customerInfo
+        });
+    }
 
-    fetch(url, {
-        method: "POST",
-        body: form
-    });
 </script>
 
 </html>
