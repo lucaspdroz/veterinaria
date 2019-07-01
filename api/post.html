@@ -13,11 +13,11 @@
 <body>
     <form id="login-form" method="post">
         <label for="nome_cliente">nome cliente</label>
-        <input id="nome_cliente" type="text" name="nome_cliente" required="required" value="Lucas" />
+        <input id="nome_cliente" type="text" name="nome_cliente" required="required" />
         <label for="celular">celular</label>
-        <input id="celular" type="text" name="celular" required="required" value="51984666515">
+        <input id="celular" type="text" name="celular" required="required">
         <label for="email">email</label>
-        <input id="email" type="email" name="email" required="required" value="la@la.com">
+        <input id="email" type="email" name="email" required="required">
         <label for="theDate">Data de Hoje </label>
         <input type="date" id="theDate" required="required">
         <button type="submit">Adicionar</button>
@@ -94,7 +94,7 @@
             "email": email,
             "theDate": theDate
         }
-        console.log(customerInfo);
+
         return customerInfo;
     }
 
