@@ -1,3 +1,4 @@
+(function () {
   // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyAmxtBH9FvW3bWP6pioFc2PkYFZ9baRdFk",
@@ -10,3 +11,4 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+})()
