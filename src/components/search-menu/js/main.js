@@ -1,16 +1,17 @@
 // console.log("JS funcionando");
-const searchBar = document.querySelector('#searchBar');
+const searchBar = document.querySelector('#searchbar');
 const list = document.querySelector("#ul-search");
 searchBar.addEventListener('keyup',e=>{
-
+    console.log(e);
+    
     const term = e.target.value.toLowerCase();
-    const langs = list.getElementsByTagName('li');
-    Array.from(langs).forEach((lang)=>{
-        const name = lang.firstElementChild.textContent;
+    const users = list.getElementsByTagName('li');
+    Array.from(users).forEach((user)=>{
+        const name = user.firstElementChild.textContent;
         if(name.toLowerCase().indexOf(term)!= -1){
-            lang.style.display = 'block';
+            user.style.display = 'block';
         }else{
-            lang.style.display = 'none';
+            user.style.display = 'none';
         }
     })
 })

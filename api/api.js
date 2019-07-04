@@ -1,6 +1,6 @@
 
 // GET()
-let url = "https://cantinho-dos-travessos.firebaseio.com/cliente.json?nome";
+let url = "https://cantinho-dos-travessos.firebaseio.com/cliente.json";
 fetch(url)
   .then(response =>{
     return response.json();
@@ -13,9 +13,11 @@ fetch(url)
     for(let i in clientes){
         console.log(clientes[i]);
         let li = document.createElement("li");
-        li.innerHTML =`
+        // li.classList.add('lista');
+        li.innerHTML =
+        `
           <a href="#">${clientes[i].nome_cliente}</a>
-          `;
+        `;
         list.appendChild(li);
     }
   });
