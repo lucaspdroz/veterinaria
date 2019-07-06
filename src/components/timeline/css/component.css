@@ -1,13 +1,10 @@
 .timeline {
   background-color: var(--disable);
+  min-width: 300px;
   position: relative;
   max-width: 1200px;
   margin: 45px auto;
   border-radius: 1%;
-}
-
-.timeline ul {
-  list-style: none;
 }
 
 .timeline::after {
@@ -15,10 +12,10 @@
   position: absolute;
   width: 2px;
   background-color: var(--primary);
-  top: 20px;
-  bottom: 0;
+  top: 10px;
+  bottom: 10px;
   left: 50%;
-  margin-left: -3px;
+  margin-left: -1px;
 }
 
 .container {
@@ -31,9 +28,9 @@
 .container::after {
   content: '';
   position: absolute;
-  width: 5px;
-  height: 5px;
-  right: 18.5px;
+  width: 6px;
+  height: 6px;
+  right: -4px;
   background-color: var(--white);
   border: 1px solid var(--primary);
   top: 50%;
@@ -43,14 +40,15 @@
 
 .left {
   left: 0;
+  text-align: right;
 }
 
-.rigth {
+.right {
   left: 50%;
 }
 
-.rigth::after {
-  left: -25.6px;
+.right::after {
+  left: -4px;
 }
 
 .content {
@@ -58,4 +56,35 @@
   background-color: var(--white);
   position: relative;
   border-radius: 6px;
+}
+
+@media screen and (max-width: 600px) {
+  .left{
+    text-align: left;
+  }
+
+  .timeline::after {
+  left: 20px;
+  }
+  
+  .container {
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 25px;
+  }
+  
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+   .left::after, .right::after {
+  left: 16px;
+  }
+  
+   .right {
+  left: 0%;
+  }
 }
