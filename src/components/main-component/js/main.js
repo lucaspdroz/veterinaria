@@ -70,3 +70,78 @@ function fixStepIndicator(n) {
   //... and adds the "active" class on the current step:
   x[n].className += " active";
 }
+
+
+
+let url = "https://cantinho-dos-travessos.firebaseio.com/cliente.json";
+let customerInfo;
+fetch(url)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (myJson) {
+        //   após myJson (cursosEmDestaque) é o nome do objeto Pai
+        let clientes = myJson;
+        console.log(clientes);
+
+        for (let i in clientes) {
+            console.log(clientes[i]);
+            // console.log(clientes[i].email);
+        }
+    });
+
+function getToday() {
+    let date = new Date();
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+
+    if (month < 10) month = "0" + month;
+    if (day < 10) day = "0" + day;
+
+    let today = year + "-" + month + "-" + day;
+    return today;
+}
+
+document.getElementById('theDate').value = getToday();
+
+let myFullForm = document.getElementById('login-form');
+
+
+myFullForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    getForm();
+    console.log(JSON.stringify(customerInfo));
+    fetch(url, {
+        method: 'post',
+        body: JSON.stringify(customerInfo),
+        headers:{
+            'content-type': 'application/json'
+        }
+    }).then(function (response) {
+        return response.text();
+    }).then(function (text) {
+        console.log(text);
+    }).catch(console.error());
+});
+
+
+
+
+function getForm() {
+    myForm = [myFullForm.nome_cliente.value, myFullForm.celular.value, myFullForm.email.value, myFullForm.theDate.value];
+
+    let nome_cliente = myFullForm.nome_cliente.value;
+    let celular = myFullForm.celular.value;
+    let email = myFullForm.email.value;
+    let theDate = myFullForm.theDate.value;
+
+    customerInfo = {
+        "nome_cliente": nome_cliente,
+        "celular": celular,
+        "email": email,
+        "theDate": theDate
+    }
+
+    return customerInfo;
+}
