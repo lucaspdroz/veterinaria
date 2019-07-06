@@ -13,34 +13,38 @@
 
 <body>
     <form id="login-form" method="post">
-        <h1>Register:</h1>
-        <div class="tab">
-            <p>Nome do Pet:<input placeholder="Nome do pet" oninput="this.className = ''" name="fname" autofocus></p>
-            <p>Descrição:</p>
-            <textarea class="textarea" placeholder="Descrição do pet" oninput="this.className = ''" name="lname"
-                rows="5" cols="50"></textarea>
-        </div>
-        <div class="tab">Nome do dono:
-            <p>Nome do dono:<input placeholder="Nome do dono" oninput="this.className = ''" pname="email" type="text"></p>
-            <p>E-mail:<input placeholder="E-mail" oninput="this.className = ''" name="email"></p>
-            <p>Endereço:<input placeholder="Endereço" type="text" oninput="this.className = ''" id="pword" type="password"></p>
-        </div>
-        <div class="tab">Contato:
-            <p>Telefone:<input placeholder="Telefone" oninput="this.className = ''" name="phone"></p>
-            <p>Celular:<input placeholder="Celeular" oninput="this.className = ''" name="phone"></p>
-            <p>Watsapp:<input type="checkbox" placeholder="Telefone..." oninput="this.className = ''" name="phone"></p>
-        </div>
-        <div class="tab">
-            <p><input placeholder="E-mail..." type="email" oninput="this.className = ''" name="uname"></p>
-           
-            <input type="date" id="theDate" required="required" disabled>
+        <div class="contents-item">
+            <h1>Novo Usuário:</h1>
+            <div class="tab">
+                <p>Nome do Pet:<input placeholder="Nome do pet" oninput="this.className = ''" value="asd" name="fname"
+                        autofocus></p>
+                <p>Descrição:</p>
+                <textarea class="textarea" placeholder="Descrição do pet" oninput="this.className = ''" name="lname"
+                    rows="5" cols="50"></textarea>
+            </div>
+            <div class="tab">
+                <p>Nome do dono:<input placeholder="Nome do dono" oninput="this.className = ''" value="asd"
+                        pname="email" type="text">
+                </p>
+                <p>E-mail:<input placeholder="E-mail" type="email" oninput="this.className = ''" value="asd"
+                        name="email"></p>
+                <p>Endereço:<input placeholder="Endereço" type="text" oninput="this.className = ''" value="asd"
+                        id="pword"></p>
+            </div>
+            <div class="tab">Contato:
+                <p>Telefone:<input placeholder="Telefone" oninput="this.className = ''" value="asd" name="phone"></p>
+                <p>Celular:<input placeholder="Celeular" oninput="this.className = ''" value="asd" name="phone"></p>
+                <p>Watsapp:<input type="checkbox" placeholder="Telefone..." oninput="this.className = ''" name="phone">
+                </p>
+            </div>
+            <div class="tab">
+                <p><input placeholder="E-mail..." type="email" oninput="this.className = ''"  value="asd"name="uname"></p>
+                <input type="date" id="theDate" required="required" disabled>
+            </div>
         </div>
         <!-- Circles which indicates the steps of the form: -->
         <div class="bottom-items">
             <div class="steppers">
-                <span class="step"></span>
-                <span class="step"></span>
-                <span class="step"></span>
                 <span class="step"></span>
                 <span class="step"></span>
                 <span class="step"></span>

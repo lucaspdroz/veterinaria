@@ -9,11 +9,15 @@ body {
 #login-form {
   background-color: #ffffff;
   margin: 100px auto;
-  padding: 40px;
-  width: 18vw;
-  height: auto;
+  padding: 25px;
+  width: 500px;
+  height: 800px;
   max-height: 540px;
   min-width: 300px;
+}
+
+.contents-item{
+  height: 329px;
 }
 
 h1 {
@@ -30,25 +34,30 @@ input {
 
 /* Mark input boxes that gets an error on validation: */
 
+.bottom-items {
+  margin-bottom: 0;
+}
+
 input.invalid {
   background-color: #ffdddd;
 }
 
-::placeholder{
+::placeholder {
   font-family: 'poppins';
 }
 
-input{
+input {
   font-family: 'poppins';
 }
 
 /* Hide all steps by default: */
-#nextBtn, #prevBtn{
+
+#nextBtn, #prevBtn {
   width: 145px;
   border: 1px solid #475DD2;
 }
 
-#prevBtn{
+#prevBtn {
   color: #475DD2;
   background: transparent;
 }
@@ -56,7 +65,8 @@ input{
 .tab {
   display: none;
 }
-.myButtons{
+
+.myButtons {
   display: flex;
   margin: auto;
   justify-content: center;
@@ -82,11 +92,10 @@ button:hover {
   opacity: 0.8;
 }
 
-
 /* Make circles that indicate the steps of the form: */
 
-.steppers{
-  text-align:center;
+.steppers {
+  text-align: center;
   margin: 20px 0;
 }
 
