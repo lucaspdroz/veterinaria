@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+#login-form {
+  background-color: #ffffff;
+  margin: 100px auto;
+  padding: 40px;
+  width: 18vw;
+  height: auto;
+  max-height: 540px;
+  min-width: 300px;
+}
+
+h1 {
+  text-align: center;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+
+input.invalid {
+  background-color: #ffdddd;
+}
+
+::placeholder{
+  font-family: 'poppins';
+}
+
+input{
+  font-family: 'poppins';
+}
+
+/* Hide all steps by default: */
+#nextBtn, #prevBtn{
+  width: 145px;
+  border: 1px solid #475DD2;
+}
+
+#prevBtn{
+  color: #475DD2;
+  background: transparent;
+}
+
+.tab {
+  display: none;
+}
+.myButtons{
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+}
+
+button {
+  background-color: #475DD2;
+  border-radius: 100px;
+  font-family: 'poppins';
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+/* Make circles that indicate the steps of the form: */
+
+.steppers{
+  text-align:center;
+  margin: 20px 0;
+}
+
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #475DD2;  
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+
+.step.finish {
+  background-color: #475DD2;
+}
