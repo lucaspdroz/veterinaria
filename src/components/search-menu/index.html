@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,16 +11,18 @@
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
     <script src="/api/firebase.js"></script>
 </head>
+
 <body>
-    <aside class="search-container">
-        <div class="search-bar">
-            <input type="text" id="searchbar" placeholder="Pesquise aqui...">
+    <div class="container">
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Pesquise aqui...">
+            <nav class="menu-search">
+                <ul id="ul-search">
+                </ul>
+            </nav>
         </div>
-        <nav class="menu-search">
-            <ul id="ul-search">
-            </ul>
-        </nav>
-    </aside>
+    </div>
+
     <script src="/api/api.js"></script>
     <script src="js/main.js"></script>
 </body>
