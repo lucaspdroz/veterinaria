@@ -57,13 +57,16 @@
 
     document.getElementById('theDate').value = getToday();
 
+
+    // POST
+
     let myFullForm = document.getElementById('login-form');
 
 
     myFullForm.addEventListener('submit', function (e) {
         e.preventDefault();
         getForm();
-        console.log(JSON.stringify(customerInfo));
+        // console.log(JSON.stringify(customerInfo));
         fetch(url, {
             method: 'post',
             body: JSON.stringify(customerInfo),
@@ -76,8 +79,6 @@
             console.log(text);
         }).catch(console.error());
     });
-
-
 
     
     function getForm() {
