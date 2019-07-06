@@ -38,6 +38,12 @@ input {
   margin-bottom: 0;
 }
 
+.done-icon{
+  margin: 0 35%;
+  margin-bottom: 47px;
+  width: 30%;
+}
+
 input.invalid {
   background-color: #ffdddd;
 }
