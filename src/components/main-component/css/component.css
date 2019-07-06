@@ -11,7 +11,8 @@ body {
   margin: 100px auto;
   padding: 40px;
   width: 18vw;
-  height: 524px;
+  height: auto;
+  max-height: 540px;
   min-width: 300px;
 }
 
@@ -31,6 +32,14 @@ input {
 
 input.invalid {
   background-color: #ffdddd;
+}
+
+::placeholder{
+  font-family: 'poppins';
+}
+
+input{
+  font-family: 'poppins';
 }
 
 /* Hide all steps by default: */
@@ -78,7 +87,7 @@ button:hover {
 
 .steppers{
   text-align:center;
-  margin: 40px;
+  margin: 20px 0;
 }
 
 .step {

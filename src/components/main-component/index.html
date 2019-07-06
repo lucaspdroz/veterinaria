@@ -20,46 +20,37 @@
             <textarea class="textarea" placeholder="Descrição do pet" oninput="this.className = ''" name="lname"
                 rows="5" cols="50"></textarea>
         </div>
-        <div class="tab">Contact Info:
+        <div class="tab">Nome do dono:
+            <p>Nome do dono:<input placeholder="Nome do dono" oninput="this.className = ''" pname="email" type="text"></p>
+            <p>E-mail:<input placeholder="E-mail" oninput="this.className = ''" name="email"></p>
+            <p>Endereço:<input placeholder="Endereço" type="text" oninput="this.className = ''" id="pword" type="password"></p>
+        </div>
+        <div class="tab">Contato:
+            <p>Telefone:<input placeholder="Telefone" oninput="this.className = ''" name="phone"></p>
+            <p>Celular:<input placeholder="Celeular" oninput="this.className = ''" name="phone"></p>
+            <p>Watsapp:<input type="checkbox" placeholder="Telefone..." oninput="this.className = ''" name="phone"></p>
+        </div>
+        <div class="tab">
+            <p><input placeholder="E-mail..." type="email" oninput="this.className = ''" name="uname"></p>
+           
             <input type="date" id="theDate" required="required" disabled>
-            <p><input placeholder="E-mail..." oninput="this.className = ''" name="email" autofocus></p>
-            <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
-        </div>
-        <div class="tab">Birthday:
-            <p><input placeholder="dd" oninput="this.className = ''" name="dd" autofocus></p>
-            <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
-            <p><input placeholder="yyyy" oninput="this.className = ''" id="yyyy"></p>
-        </div>
-        <div class="tab">Login Info:
-            <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
-            <p><input placeholder="Password..." oninput="this.className = ''" id="pword" type="password"></p>
-        </div>
-        <div class="tab">Login Info:
-            <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
-            <p><input placeholder="Password..." oninput="this.className = ''" name="pword" type="password"></p>
-        </div>
-        <div class="tab">Login Info:
-            <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
-            <p><input placeholder="Password..." oninput="this.className = ''" id="pword" type="password"></p>
-        </div>
-        <div class="tab">Login Info:
-            <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
-            <p><input placeholder="Password..." oninput="this.className = ''" id="pword" type="password"></p>
         </div>
         <!-- Circles which indicates the steps of the form: -->
-        <div class="steppers">
-            <span class="step"></span>
-            <span class="step"></span>
-            <span class="step"></span>
-            <span class="step"></span>
-            <span class="step"></span>
-            <span class="step"></span>
-            <span class="step"></span>
-        </div>
-        <div class="myButtons">
-            <div style="float:right;">
-                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+        <div class="bottom-items">
+            <div class="steppers">
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+            </div>
+            <div class="myButtons">
+                <div style="float:right;">
+                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Voltar</button>
+                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Próximo</button>
+                </div>
             </div>
         </div>
 
