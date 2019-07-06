@@ -12,13 +12,12 @@ searchBar.addEventListener('keyup',e=>{
         console.log(name);
         
         if(name.toLowerCase().indexOf(term)!= -1){
-            user.style.display = 'block';
+            user.style.display = 'flex';
         }else{
             user.style.display = 'none';
         }
     })
 })
-
 
 
 
