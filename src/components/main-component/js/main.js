@@ -1,3 +1,10 @@
+// Form to POST
+let myFullForm = document.getElementById('login-form');
+let customerInfo;
+let url = "https://cantinho-dos-travessos.firebaseio.com/cliente.json";
+
+
+
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
@@ -12,7 +19,9 @@ function showTab(n) {
     document.getElementById("prevBtn").style.display = "inline";
   }
   if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "Enviar";
+    let mySendButton = document.getElementById("nextBtn");
+    mySendButton.innerHTML = "Enviar";
+
   } else {
     document.getElementById("nextBtn").innerHTML = "Próximo";
   }
@@ -32,7 +41,9 @@ function nextPrev(n) {
   // if you have reached the end of the form...
   if (currentTab >= x.length) {
     // ... the form gets submitted:
-    document.getElementById("login-form").submit();
+    let mySendButton = document.getElementById("nextBtn");
+    mySendButton.setAttribute('type', 'submit')
+    // document.getElementById("login-form").submit();
     return false;
   }
   // Otherwise, display the correct tab:
@@ -71,77 +82,96 @@ function fixStepIndicator(n) {
   x[n].className += " active";
 }
 
-
-
-let url = "https://cantinho-dos-travessos.firebaseio.com/cliente.json";
-let customerInfo;
-fetch(url)
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (myJson) {
-        //   após myJson (cursosEmDestaque) é o nome do objeto Pai
-        let clientes = myJson;
-        console.log(clientes);
-
-        for (let i in clientes) {
-            console.log(clientes[i]);
-            // console.log(clientes[i].email);
-        }
-    });
-
 function getToday() {
-    let date = new Date();
-    let day = date.getDate();
-    let month = date.getMonth() + 1;
-    let year = date.getFullYear();
+  let date = new Date();
+  let day = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
 
-    if (month < 10) month = "0" + month;
-    if (day < 10) day = "0" + day;
+  if (month < 10) month = "0" + month;
+  if (day < 10) day = "0" + day;
 
-    let today = year + "-" + month + "-" + day;
-    return today;
+  let today = year + "-" + month + "-" + day;
+  return today;
 }
-
 document.getElementById('theDate').value = getToday();
 
-let myFullForm = document.getElementById('login-form');
 
+// LAST POST
 
 myFullForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    getForm();
-    console.log(JSON.stringify(customerInfo));
-    fetch(url, {
-        method: 'post',
-        body: JSON.stringify(customerInfo),
-        headers:{
-            'content-type': 'application/json'
-        }
-    }).then(function (response) {
-        return response.text();
-    }).then(function (text) {
-        console.log(text);
-    }).catch(console.error());
+  e.preventDefault();
+  getForm();
+  // console.log(JSON.stringify(customerInfo));
+  fetch(url, {
+    method: 'post',
+    body: JSON.stringify(customerInfo),
+    headers: {
+      'content-type': 'application/json'
+    }
+  }).then(function (response) {
+    return response.text();
+  }).then(function (text) {
+    console.log(text);
+  }).catch(console.error());
 });
 
-
-
-
 function getForm() {
-    myForm = [myFullForm.nome_cliente.value, myFullForm.celular.value, myFullForm.email.value, myFullForm.theDate.value];
+  myForm = [myFullForm.namePet.value, myFullForm.description.value, myFullForm.owner.value, myFullForm.mailOwner.value, myFullForm.address.value, myFullForm.phone.value, myFullForm.celphone.value, myFullForm.whatsapp.value, myFullForm.theDate.value];
 
-    let nome_cliente = myFullForm.nome_cliente.value;
-    let celular = myFullForm.celular.value;
-    let email = myFullForm.email.value;
-    let theDate = myFullForm.theDate.value;
+  let petName = myFullForm.namePet.value;
+  let petDescription = myFullForm.description.value;
+  let nome_cliente = myFullForm.owner.value;
+  let address = myFullForm.address.value;
+  let phone = myFullForm.phone.value;
+  let whatsapp = myFullForm.whatsapp.value;
+  let email = myFullForm.mailOwner.value;
+  let celular = myFullForm.celphone.value;
+  let theDate = myFullForm.theDate.value;
 
-    customerInfo = {
-        "nome_cliente": nome_cliente,
-        "celular": celular,
-        "email": email,
-        "theDate": theDate
-    }
-
-    return customerInfo;
+  customerInfo = {
+    "name_pet": petName,
+    "pet_description": petDescription,
+    "pet_description": petDescription,
+    "pet-description": myFullForm.description.value,
+    "address": address,
+    "nome_cliente": nome_cliente,
+    "email": email,
+    "telefone": phone,
+    "celular": celular,
+    "whatsapp": whatsapp,
+    "theDateRegister": theDate
+  }
+  console.log(customerInfo);
+  return customerInfo;
 }
+
+// myFullForm.addEventListener("keyup", function () {
+//   myForm = [myFullForm.namePet.value, myFullForm.description.value, myFullForm.owner.value, myFullForm.mailOwner.value, myFullForm.address.value, myFullForm.phone.value, myFullForm.celphone.value, myFullForm.whatsapp.value, myFullForm.theDate.value];
+
+//   let petName = myFullForm.namePet.value;
+//   let petDescription = myFullForm.description.value;
+//   let nome_cliente = myFullForm.owner.value;
+//   let address = myFullForm.address.value;
+//   let phone = myFullForm.phone.value;
+//   let whatsapp = myFullForm.whatsapp.value;
+//   let email = myFullForm.mailOwner.value;
+//   let celular = myFullForm.celphone.value;
+//   let theDate = myFullForm.theDate.value;
+
+//   customerInfo = {
+//     "name_pet": petName,
+//     "pet_description": petDescription,
+//     "pet_description": petDescription,
+//     "pet-description": myFullForm.description.value,
+//     "address": address,
+//     "nome_cliente": nome_cliente,
+//     "email": email,
+//     "telefone": phone,
+//     "celular": celular,
+//     "whatsapp": whatsapp,
+//     "theDateRegister": theDate
+//   }
+//   console.log(customerInfo);
+//   return customerInfo;
+// });

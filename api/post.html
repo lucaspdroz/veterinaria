@@ -34,10 +34,12 @@
         .then(function (myJson) {
             //   após myJson (cursosEmDestaque) é o nome do objeto Pai
             let clientes = myJson;
-            console.log(clientes);
+            // console.log(clientes);
+            // console.log(Object.getPrototypeOf((myJson)[0]));
+            console.log(Object.values(clientes)[0]);
 
             for (let i in clientes) {
-                console.log(clientes[i]);
+                // console.log(clientes[i]);
                 // console.log(clientes[i].email);
             }
         });
@@ -62,7 +64,6 @@
 
     let myFullForm = document.getElementById('login-form');
 
-
     myFullForm.addEventListener('submit', function (e) {
         e.preventDefault();
         getForm();
@@ -70,7 +71,7 @@
         fetch(url, {
             method: 'post',
             body: JSON.stringify(customerInfo),
-            headers:{
+            headers: {
                 'content-type': 'application/json'
             }
         }).then(function (response) {
@@ -80,7 +81,7 @@
         }).catch(console.error());
     });
 
-    
+
     function getForm() {
         myForm = [myFullForm.nome_cliente.value, myFullForm.celular.value, myFullForm.email.value, myFullForm.theDate.value];
 
