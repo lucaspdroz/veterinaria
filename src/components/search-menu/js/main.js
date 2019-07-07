@@ -37,7 +37,7 @@ fetch(url)
             li.innerHTML =
                 `
           
-          <a href="#" onClick ='bodyContent("${clientes[i].name_pet}","${clientes[i].description_pet}","${clientes[i].nome_cliente}","${clientes[i].telefone}","${clientes[i].celular}","${clientes[i].email}","${clientes[i].whatsapp}")'>${clientes[i].nome_cliente}</a>
+          <a href="#" onClick ='bodyContent("${clientes[i].name_pet}","${clientes[i].pet_description}","${clientes[i].nome_cliente}","${clientes[i].telefone}","${clientes[i].celular}","${clientes[i].email}","${clientes[i].whatsapp}")'>${clientes[i].nome_cliente}</a>
          
           
         `;
