@@ -1,18 +1,176 @@
+*{
+  box-sizing: border-box;
+}
+
+.timeline{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  display: flex;
+  background-color: var(--disable);
+  min-width: 300px;
+  max-width: 1200px;
+  margin: 45px auto;
+  padding-top: 2px;
+  border-radius: 1%;
+}
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  top: 70px;
+  background-color: var(--primary);
+  bottom: 10px;
+  align-self: center;
+}
+h2{
+  text-align: center;
+  margin-bottom: 0px;
+}
+h4{
+  margin: 0px;
+}
+.btn_add{
+  align-self: center;
+  margin-top: 0px;
+  border-radius: 100px;
+  font-size: 60px;
+  color: white;
+  padding: 0px 18px;
+  background-color: var(--primary);
+  border-color: var(--primary);
+  z-index: 1;
+}
+.container {
+  padding: 10px 40px;
+  top: 10px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+.container::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: var(--white);
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  top: 50%;
+  right: -6px;
+  z-index: 1;
+}
+.left {
+  left: 0;
+  text-align: right;
+}
+.right {
+  left: 50%;
+}
+.right::after {
+  left: -6px;
+}
+.content {
+  padding: 10px 20px;
+  background-color: var(--white);
+  position: relative;
+  border-radius: 6px;
+}
+
+@media screen and (max-width: 600px) {
+  
+
+  .timeline h2{
+    text-align: left;
+    padding-left: 85px;
+    margin-top: 25px;
+    font-size: 1.5em;
+  }
+  .btn_add{
+    align-self: flex-start;
+    margin-left: 5px;
+    margin-top: -50px;
+  }
+
+  .left{
+    text-align: left;
+  }
+
+  .timeline::after {
+    top: 60px;
+    left: 40.5px;
+  }
+  
+  .container {
+  top: 0px;
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 25px;
+  margin-left: 20px;
+  }
+  
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+   .left::after, .right::after {
+  left: 16.5px;
+  }
+  
+   .right {
+  left: 0%;
+  }
+}
+
+
+
+
+/* *{
+  box-sizing: border-box;
+}
+
 .timeline {
   background-color: var(--disable);
   min-width: 300px;
-  position: relative;
   max-width: 1200px;
+  position: relative;
   margin: 45px auto;
+  padding-top: 2px;
   border-radius: 1%;
+}
+
+h4{
+  margin: 0px;
+}
+
+.timeline h2{
+  text-align: center;
+}
+
+.btn_add{
+  position: absolute;
+  color: white;
+  font-size: 60px;
+  justify-content: center;
+  border-color: var(--primary);
+  background-color: var(--primary);
+  border-radius: 100px;
+  padding: 0px 18px;
+  text-decoration: none;
+  top: 60px;
+  z-index: 1;
 }
 
 .timeline::after {
   content: '';
   position: absolute;
-  width: 2px;
+  width: 3px;
   background-color: var(--primary);
-  top: 10px;
+  top: 65px;
   bottom: 10px;
   left: 50%;
   margin-left: -1px;
@@ -20,6 +178,7 @@
 
 .container {
   padding: 10px 40px;
+  top: 50px;
   position: relative;
   background-color: inherit;
   width: 50%;
@@ -28,11 +187,11 @@
 .container::after {
   content: '';
   position: absolute;
-  width: 6px;
-  height: 6px;
-  right: -4px;
+  width: 7px;
+  height: 7px;
+  right: -6px;
   background-color: var(--white);
-  border: 1px solid var(--primary);
+  border: 2px solid var(--primary);
   top: 50%;
   border-radius: 50%;
   z-index: 1;
@@ -48,26 +207,40 @@
 }
 
 .right::after {
-  left: -4px;
+  left: -5px;
 }
 
 .content {
-  padding: 20px 30px;
+  padding: 10px 20px;
   background-color: var(--white);
   position: relative;
   border-radius: 6px;
 }
 
 @media screen and (max-width: 600px) {
+  
+
+  .timeline h2{
+    text-align: left;
+    padding-left: 50px;
+  }
+
   .left{
     text-align: left;
   }
 
+  .timeline::before{
+    top: 20px;
+    left: 25px;
+  }
+
   .timeline::after {
-  left: 20px;
+    top: 25px;
+  left: 25px;
   }
   
   .container {
+  top: 0px;
   width: 100%;
   padding-left: 40px;
   padding-right: 25px;
@@ -81,10 +254,10 @@
   }
 
    .left::after, .right::after {
-  left: 16px;
+  left: 20px;
   }
   
    .right {
   left: 0%;
   }
-}
+} */
