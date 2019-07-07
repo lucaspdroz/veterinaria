@@ -42,25 +42,25 @@ Tempo estimado de trabalho bruto: 6~8 meses
        >[Search Menu](https://www.w3schools.com/howto/howto_js_search_menu.asp). 
        >[Filter List](https://www.w3schools.com/howto/howto_js_filter_lists.asp). 
 
-- [ x ] Timeline:
+- [x] Timeline:
        >[Timeline](https://www.w3schools.com/howto/howto_css_timeline.asp).
 
 - [ ]  Tooltip:
       >[Tooltips](https://www.w3schools.com/howto/howto_css_tooltip.asp).
 
-- [ x ] Loaders:
+- [x] Loaders:
       >[Loader](https://www.w3schools.com/howto/howto_css_loader.asp).
 
- - [ ] To the Top Button:
+- [ ] To the Top Button:
       >[To the Top Button](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)
 
 - [ ] Overlay (To Modal /form on real focus):
       >[Overlay](https://www.w3schools.com/howto/howto_css_overlay.asp)
 
-- [ x ] Multi Step Form:
+- [x] Multi Step Form:
       >[Multi Step Form](https://www.w3schools.com/howto/howto_js_form_steps.asp)
 
- - [ ] Screen Scroll indicator (on Top):
+- [ ] Screen Scroll indicator (on Top):
       >[Screen Scroll indicator](https://www.w3schools.com/howto/howto_js_scroll_indicator.asp)
 
 - [ ] Style CSS Table:
