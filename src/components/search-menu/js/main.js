@@ -32,8 +32,5 @@ searchBar.addEventListener('keyup',e=>{
 
 
 
-
-
-
   
   
