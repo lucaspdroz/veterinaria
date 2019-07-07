@@ -43,6 +43,8 @@ h4{
 }
 .container {
   padding: 10px 40px;
+  min-width: 300px;
+  max-width: 1200px;
   top: 10px;
   position: relative;
   background-color: inherit;
@@ -84,13 +86,13 @@ h4{
   .timeline h2{
     text-align: left;
     padding-left: 85px;
-    margin-top: 25px;
     font-size: 1.5em;
   }
   .btn_add{
-    align-self: flex-start;
-    margin-left: 5px;
-    margin-top: -50px;
+    position: absolute;
+    left: 5px;
+    top: 15px;
+    z-index: 1;
   }
 
   .left{
@@ -103,161 +105,17 @@ h4{
   }
   
   .container {
-  top: 0px;
+  top: 20px;
   width: 100%;
-  padding-left: 40px;
-  padding-right: 25px;
-  margin-left: 20px;
+  padding-left: 55px;
+  padding-right: 15px;
   }
   
-  .container::before {
-  left: 60px;
-  border: medium solid white;
-  border-width: 10px 10px 10px 0;
-  border-color: transparent white transparent transparent;
-  }
-
-   .left::after, .right::after {
-  left: 16.5px;
+  .left::after, .right::after {
+  left: 36.5px;
   }
   
    .right {
   left: 0%;
   }
 }
-
-
-
-
-/* *{
-  box-sizing: border-box;
-}
-
-.timeline {
-  background-color: var(--disable);
-  min-width: 300px;
-  max-width: 1200px;
-  position: relative;
-  margin: 45px auto;
-  padding-top: 2px;
-  border-radius: 1%;
-}
-
-h4{
-  margin: 0px;
-}
-
-.timeline h2{
-  text-align: center;
-}
-
-.btn_add{
-  position: absolute;
-  color: white;
-  font-size: 60px;
-  justify-content: center;
-  border-color: var(--primary);
-  background-color: var(--primary);
-  border-radius: 100px;
-  padding: 0px 18px;
-  text-decoration: none;
-  top: 60px;
-  z-index: 1;
-}
-
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 3px;
-  background-color: var(--primary);
-  top: 65px;
-  bottom: 10px;
-  left: 50%;
-  margin-left: -1px;
-}
-
-.container {
-  padding: 10px 40px;
-  top: 50px;
-  position: relative;
-  background-color: inherit;
-  width: 50%;
-}
-
-.container::after {
-  content: '';
-  position: absolute;
-  width: 7px;
-  height: 7px;
-  right: -6px;
-  background-color: var(--white);
-  border: 2px solid var(--primary);
-  top: 50%;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-.left {
-  left: 0;
-  text-align: right;
-}
-
-.right {
-  left: 50%;
-}
-
-.right::after {
-  left: -5px;
-}
-
-.content {
-  padding: 10px 20px;
-  background-color: var(--white);
-  position: relative;
-  border-radius: 6px;
-}
-
-@media screen and (max-width: 600px) {
-  
-
-  .timeline h2{
-    text-align: left;
-    padding-left: 50px;
-  }
-
-  .left{
-    text-align: left;
-  }
-
-  .timeline::before{
-    top: 20px;
-    left: 25px;
-  }
-
-  .timeline::after {
-    top: 25px;
-  left: 25px;
-  }
-  
-  .container {
-  top: 0px;
-  width: 100%;
-  padding-left: 40px;
-  padding-right: 25px;
-  }
-  
-  .container::before {
-  left: 60px;
-  border: medium solid white;
-  border-width: 10px 10px 10px 0;
-  border-color: transparent white transparent transparent;
-  }
-
-   .left::after, .right::after {
-  left: 20px;
-  }
-  
-   .right {
-  left: 0%;
-  }
-} */
