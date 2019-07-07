@@ -132,8 +132,6 @@ function getForm() {
   customerInfo = {
     "name_pet": petName,
     "pet_description": petDescription,
-    "pet_description": petDescription,
-    "pet-description": myFullForm.description.value,
     "address": address,
     "nome_cliente": nome_cliente,
     "email": email,
