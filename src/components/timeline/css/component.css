@@ -12,6 +12,7 @@
   max-width: 1200px;
   margin: 45px auto;
   padding-top: 2px;
+  padding-bottom: 20px;
   border-radius: 1%;
 }
 .timeline::after {
