@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <script src="../api/firebase.js"></script>
+</head>
+
+<body>
+    <form id="login-form" method="post">
+        <label for="nome_cliente">nome cliente</label>
+        <input id="nome_cliente" type="text" name="nome_cliente" required="required" />
+        <label for="celular">celular</label>
+        <input id="celular" type="text" name="celular" required="required">
+        <label for="email">email</label>
+        <input id="email" type="email" name="email" required="required">
+        <label for="theDate">Data de Hoje </label>
+        <input type="date" id="theDate" required="required">
+        <button type="submit">Adicionar</button>
+    </form>
+</body>
+
+<script>
+    let url = "https://cantinho-dos-travessos.firebaseio.com/cliente.json";
+    let customerInfo;
+    fetch(url)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (myJson) {
+            //   após myJson (cursosEmDestaque) é o nome do objeto Pai
+            let clientes = myJson;
+            console.log(clientes);
+            for (let i in clientes) {
+                console.log(clientes[i]);
+                // console.log(clientes[i].email);
+            }
+        });
+    function getToday() {
+        let date = new Date();
+        let day = date.getDate();
+        let month = date.getMonth() + 1;
+        let year = date.getFullYear();
+        if (month < 10) month = "0" + month;
+        if (day < 10) day = "0" + day;
+        let today = year + "-" + month + "-" + day;
+        return today;
+    }
+    document.getElementById('theDate').value = getToday();
+    let myFullForm = document.getElementById('login-form');
+    myFullForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        getForm();
+        console.log(JSON.stringify(customerInfo));
+        fetch(url, {
+            method: 'post',
+            body: JSON.stringify(customerInfo),
+            headers:{
+                'content-type': 'application/json'
+            }
+        }).then(function (response) {
+            return response.text();
+        }).then(function (text) {
+            console.log(text);
+        }).catch(console.error());
+    });
+    
+    function getForm() {
+        myForm = [myFullForm.nome_cliente.value, myFullForm.celular.value, myFullForm.email.value, myFullForm.theDate.value];
+        let nome_cliente = myFullForm.nome_cliente.value;
+        let celular = myFullForm.celular.value;
+        let email = myFullForm.email.value;
+        let theDate = myFullForm.theDate.value;
+        customerInfo = {
+            "nome_cliente": nome_cliente,
+            "celular": celular,
+            "email": email,
+            "theDate": theDate
+        }
+        return customerInfo;
+    }
+    // myFullForm.addEventListener("keyup", function () {
+    //     myForm = [myFullForm.nome_cliente.value, myFullForm.celular.value, myFullForm.email.value, myFullForm.theDate.value];
+    //     let nome_cliente = myFullForm.nome_cliente.value;
+    //     let celular = myFullForm.celular.value;
+    //     let email = myFullForm.email.value;
+    //     let theDate = myFullForm.theDate.value;
+    //     customerInfo = {
+    //         "nome_cliente": nome_cliente,
+    //         "celular": celular,
+    //         "email": email,
+    //         "theDate": theDate
+    //     }
+    //     console.log(customerInfo);
+    //     return customerInfo;
+    // });
+</script>
+
+</html>
