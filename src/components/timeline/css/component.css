@@ -17,17 +17,18 @@
     content: '';
     position: absolute;
     width: 4px;
-    top: 70px;
+    top: 98px;
     background-color: var(--primary);
     bottom: 10px;
     align-self: center;
     /* filter: blur(10px); */
   }
-  h2{
+  .timeline h2{
     text-align: center;
-    margin-bottom: 0px;
+    margin-bottom: 33px;
   }
-  h4{
+  
+  .timeline h4{
     margin: 0px;
   }
   .btn_add{
@@ -84,7 +85,7 @@
 
   #pop-up{
     position: absolute;
-    display: flex;
+    display: none;
     top: 40%;
     left: 40%;
     transform: translate(-40%,-40%);

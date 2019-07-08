@@ -75,4 +75,4 @@
         
     }
     
-
+    document.getElementById('appointment_date').value = getToday();
