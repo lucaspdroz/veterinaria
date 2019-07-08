@@ -63,13 +63,13 @@ const bodyContent = (namePet,descriptionPet,nameOwner, phone1, phone2, email, za
     span4.innerHTML = ` `;
 
 
-    h1.innerHTML = `Pet: ${namePet}`;
-    h2.innerHTML = `Dono: ${nameOwner}`;
-    h4.innerHTML = `Descrição: ${descriptionPet}`;
-    span1.innerHTML = `Telefone: ${phone1}`;
-    span2.innerHTML = `Celular: ${phone2}`;
-    span3.innerHTML = `Email: ${email} `;
-    span4.innerHTML = `Whatspp: ${zap}`;
+    h1.innerHTML = `${namePet}`;
+    h2.innerHTML = `${nameOwner}`;
+    h4.innerHTML = `${descriptionPet}`;
+    span1.innerHTML = `Telefone:&nbsp; ${phone1}`;
+    span2.innerHTML = `Celular:&nbsp; ${phone2}`;
+    span3.innerHTML = `Email:&nbsp; ${email} `;
+    span4.innerHTML = `Whatspp:&nbsp; ${zap}`;
 
     petBox.appendChild(h1);
     petBox.appendChild(h4);
