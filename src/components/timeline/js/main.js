@@ -47,6 +47,7 @@
           console.error(err)
         });
     }
+    
     function getForm() {
         let dateAppoinment = appointmentForm.appointment_date.value;
         
