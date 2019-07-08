@@ -8,7 +8,7 @@ searchBar.addEventListener('keyup', e => {
     Array.from(users).forEach((user) => {
 
         const name = user.firstElementChild.textContent;
-        console.log(name);
+        // console.log(name);
 
         if (name.toLowerCase().indexOf(term) != -1) {
             user.style.display = 'flex';
@@ -31,7 +31,7 @@ fetch(url)
         // console.log(clientes);
         for (let i in clientes) {
 
-            console.log(clientes[i]);
+            // console.log(clientes[i]);
             let li = document.createElement("li");
             // li.classList.add('lista');
             li.innerHTML =
