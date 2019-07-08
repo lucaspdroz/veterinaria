@@ -100,31 +100,31 @@
     padding: 2px 26px;
 }
 #owner-box span:nth-child(4n+2){
-   background: url('/media/icons/fone2-icon.svg');
-   background-repeat: no-repeat;
-   background-size: 1.3em;
-   background-position-y: 0.3em;
-}
-#owner-box span:nth-child(4n+3){
-    background: url('/media/icons/fone1-icon.svg');
-    background-repeat: no-repeat;
-    background-size: 0.8em;
-    background-position-y: 0.3em;
-    background-position-x: 0.3em;
- }
- #owner-box span:nth-child(4n+4){
-    background: url('/media/icons/email-icon.svg');
-    background-repeat: no-repeat;
-    background-size: 1.2em;
-    background-position-y: 0.3em;
- }
-
- #owner-box span:nth-child(4n+1){
-    background: url('/media/icons/zap-icon.svg');
+    background: url('../../../../media/icons/fone2-icon.svg');
     background-repeat: no-repeat;
     background-size: 1.3em;
     background-position-y: 0.3em;
  }
+ #owner-box span:nth-child(4n+3){
+     background: url('../../../../media/icons/fone1-icon.svg');
+     background-repeat: no-repeat;
+     background-size: 0.8em;
+     background-position-y: 0.3em;
+     background-position-x: 0.3em;
+  }
+  #owner-box span:nth-child(4n+4){
+     background: url('../../../../media/icons/email-icon.svg');
+     background-repeat: no-repeat;
+     background-size: 1.2em;
+     background-position-y: 0.3em;
+  }
+ 
+  #owner-box span:nth-child(4n+1){
+     background: url('../../../../media/icons/zap-icon.svg');
+     background-repeat: no-repeat;
+     background-size: 1.3em;
+     background-position-y: 0.3em;
+  }
 #owner-box h2{
     display: flex;
     margin: auto 5px;
