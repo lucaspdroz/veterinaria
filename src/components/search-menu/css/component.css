@@ -21,11 +21,12 @@
 
 #search-bar{
     position: absolute;
+    width: 223px;
     min-width: 225px;
     display: flex;
     font-family: 'Poppins', sans-serif;
     margin: 1em;
-    padding: 0 3em 0px 14px;
+    padding: 0px 40px 0 10px;
     border: none;
     box-shadow: 1px 3px 15px var(--black);
     height: 3em;
