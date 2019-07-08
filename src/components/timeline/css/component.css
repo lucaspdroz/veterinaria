@@ -1,122 +1,201 @@
-*{
-  box-sizing: border-box;
-}
 
-.timeline{
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  display: flex;
-  background-color: var(--disable);
-  min-width: 300px;
-  max-width: 1200px;
-  margin: 45px auto;
-  padding-top: 2px;
-  padding-bottom: 20px;
-  border-radius: 1%;
-}
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 4px;
-  top: 70px;
-  background-color: var(--primary);
-  bottom: 10px;
-  align-self: center;
-}
-h2{
-  text-align: center;
-  margin-bottom: 0px;
-}
-h4{
-  margin: 0px;
-}
-.btn_add{
-  align-self: center;
-  margin-top: 0px;
-  border-radius: 100px;
-  font-size: 60px;
-  color: white;
-  padding: 0px 18px;
-  background-color: var(--primary);
-  border-color: var(--primary);
-  z-index: 1;
-}
-.container {
-  padding: 10px 40px;
-  min-width: 300px;
-  max-width: 1200px;
-  top: 10px;
-  position: relative;
-  background-color: inherit;
-  width: 50%;
-}
-.container::after {
-  content: '';
-  box-sizing: border-box;
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background-color: var(--white);
-  border: 2px solid var(--primary);
-  border-radius: 50%;
-  top: 50%;
-  right: -6px;
-  z-index: 1;
-}
-.left {
-  left: 0;
-  text-align: right;
-}
-.right {
-  left: 50%;
-}
-.right::after {
-  left: -6px;
-}
-.content {
-  padding: 10px 20px;
-  background-color: var(--white);
-  position: relative;
-  border-radius: 6px;
-}
-
-@media screen and (max-width: 600px) {
-  
-
-  .timeline h2{
-    text-align: left;
-    padding-left: 85px;
-    font-size: 1.5em;
+  .timeline{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    display: flex;
+    background-color: var(--disable);
+    min-width: 300px;
+    max-width: 1200px;
+    margin: 45px auto;
+    padding-top: 2px;
+    padding-bottom: 20px;
+    border-radius: 1%;
+    
+  }
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    top: 70px;
+    background-color: var(--primary);
+    bottom: 10px;
+    align-self: center;
+    /* filter: blur(10px); */
+  }
+  h2{
+    text-align: center;
+    margin-bottom: 0px;
+  }
+  h4{
+    margin: 0px;
   }
   .btn_add{
-    position: absolute;
-    left: 5px;
-    top: 15px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    font-size: var(--s-small);
+    color: white;
+    padding: 0px 18px;
+    background-color: var(--primary);
+    border: 1px solid  var(--primary);
     z-index: 1;
   }
-
-  .left{
-    text-align: left;
-  }
-
-  .timeline::after {
-    top: 60px;
-    left: 40.5px;
-  }
-  
   .container {
-  top: 20px;
-  width: 100%;
-  padding-left: 55px;
-  padding-right: 15px;
+    padding: 10px 40px;
+    min-width: 300px;
+    max-width: 1200px;
+    top: 10px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+
   }
-  
-  .left::after, .right::after {
-  left: 36.5px;
+  .container::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: var(--white);
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    top: 50%;
+    right: -6px;
+    z-index: 1;
+    
   }
-  
-   .right {
-  left: 0%;
+  .left {
+    left: 0;
+    text-align: right;
   }
-}
+  .right {
+    left: 50%;
+  }
+  .right::after {
+    left: -6px;
+  }
+  .content {
+    padding: 10px 20px;
+    background-color: var(--white);
+    position: relative;
+    border-radius: 6px;
+  }
+
+  #pop-up{
+    position: absolute;
+    display: flex;
+    top: 40%;
+    left: 40%;
+    transform: translate(-40%,-40%);
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 5px;
+    width: 80%;
+    height: 390px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color:var(--disable);
+    z-index: 5;
+
+  }
+  /* #pop-up form{
+    padding: 10px;
+  } */
+  #pop-up input{
+    border: none;
+    border-radius: 5px;
+  }
+  .close{
+    margin: auto;
+    margin-right: 0;
+    width: 25px;
+    height: 25px;
+    background: none;
+    font-weight: var(--bold);
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+
+  /* #pop-up  input[type = button]{
+    position: absolute;
+    left: 90%;
+    margin:10px;
+    width: 25px;
+    height: 25px;
+  }  */
+  #pop-up input[type = date]{
+    margin: 10px 0;
+    text-align: left;
+    padding: 10px;
+    width: 262px;
+    height: 20px;
+  }
+  #pop-up input[type = text]{
+    margin: 10px 0;
+    width: 262px;
+    height: 20px;
+  }
+
+  #pop-up textarea{
+    margin: 10px auto;
+    min-width: 100%;
+    height: 20vh;
+    resize: none;
+    border: none;
+  }
+  /* .sub-btn{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+  } */
+
+  /* #save-btn, #cancel-btn{
+    display: flex;
+    margin: auto;
+    width: 145px;
+    border: 1px solid #475DD2;
+  } */
+    
+  /* #cancel-btn{
+      /* background: transparent; 
+  } */
+  @media screen and (max-width: 600px) {
+    
+
+    .timeline h2{
+      text-align: left;
+      padding-left: 85px;
+      font-size: 1.5em;
+    }
+    .btn_add{
+      position: absolute;
+      left: 5px;
+      top: 15px;
+      z-index: 1;
+    }
+
+    .left{
+      text-align: left;
+    }
+
+    .timeline::after {
+      top: 60px;
+      left: 40.5px;
+    }
+    
+    .container {
+    top: 20px;
+    width: 100%;
+    padding-left: 55px;
+    padding-right: 15px;
+    }
+    
+    .left::after, .right::after {
+    left: 36.5px;
+    }
+    
+    .right {
+    left: 0%;
+    }
+  }
