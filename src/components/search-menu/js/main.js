@@ -37,7 +37,7 @@ fetch(url)
             li.innerHTML =
                 `
           
-          <a href="#" onClick ='bodyContent("${clientes[i].name_pet}","${clientes[i].pet_description}","${clientes[i].nome_cliente}","${clientes[i].telefone}","${clientes[i].celular}","${clientes[i].email}","${clientes[i].whatsapp}")'>${clientes[i].nome_cliente}</a>
+          <a href="#" onClick ='bodyContent("${clientes[i].name_pet}","${clientes[i].pet_description}","${clientes[i].nome_cliente}","${clientes[i].telefone}","${clientes[i].celular}","${clientes[i].email}","${clientes[i].whatsapp}", "${i}")'>${clientes[i].nome_cliente}</a>
          
           
         `;
@@ -53,7 +53,8 @@ const span1 = document.createElement("span");
 const span2 = document.createElement("span");
 const span3 = document.createElement("span");
 const span4 = document.createElement("span");
-const bodyContent = (namePet,descriptionPet,nameOwner, phone1, phone2, email, zap) => {
+const id = document.createElement("span");
+const bodyContent = (namePet,descriptionPet,nameOwner, phone1, phone2, email, zap, i) => {
     h1.innerHTML = ` `;
     h2.innerHTML = ` `;
     h4.innerHTML = ` `;
@@ -61,6 +62,7 @@ const bodyContent = (namePet,descriptionPet,nameOwner, phone1, phone2, email, za
     span2.innerHTML = ` `;
     span3.innerHTML = ` `;
     span4.innerHTML = ` `;
+    id.innerHTML = ` `;
 
 
     h1.innerHTML = `${namePet}`;
@@ -70,6 +72,7 @@ const bodyContent = (namePet,descriptionPet,nameOwner, phone1, phone2, email, za
     span2.innerHTML = `Celular:&nbsp; ${phone2}`;
     span3.innerHTML = `Email:&nbsp; ${email} `;
     span4.innerHTML = `Whatspp:&nbsp; ${zap}`;
+    id.innerHTML = `${i}`;
 
     petBox.appendChild(h1);
     petBox.appendChild(h4);
@@ -78,6 +81,7 @@ const bodyContent = (namePet,descriptionPet,nameOwner, phone1, phone2, email, za
     ownerBox.appendChild(span2);
     ownerBox.appendChild(span3);
     ownerBox.appendChild(span4);
+    ownerBox.appendChild(id);
 }
 
 
