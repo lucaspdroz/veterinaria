@@ -3,6 +3,18 @@ let myFullForm = document.getElementById('login-form');
 let customerInfo;
 let url = "https://cantinho-dos-travessos.firebaseio.com/cliente.json";
 
+const bla = document.getElementById("whatsapp");
+
+// change the value of whatsapp to API
+bla.addEventListener('change', function() {
+  if(this.checked) {
+    bla.value = true;
+    console.log(bla.value);
+  } else {
+    bla.value = false;
+    console.log(bla.value);
+  }
+});
 
 
 var currentTab = 0; // Current tab is set to be the first tab (0)
