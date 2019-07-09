@@ -1,22 +1,194 @@
-// Form to POST
-let myFullForm = document.getElementById('login-form');
-let customerInfo;
-let url = "https://cantinho-dos-travessos.firebaseio.com/cliente.json";
 
-const bla = document.getElementById("whatsapp");
 
 // change the value of whatsapp to API
-bla.addEventListener('change', function() {
-  if(this.checked) {
-    bla.value = true;
-    console.log(bla.value);
+const whatsapp = document.getElementById("whatsapp");
+
+whatsapp.addEventListener('change', function () {
+  if (this.checked) {
+    whatsapp.value = true;
   } else {
-    bla.value = false;
-    console.log(bla.value);
+    whatsapp.value = false;
   }
 });
 
+// SearchBar
+const searchBar = document.querySelector('#search-bar');
+const list = document.querySelector("#ul-search");
+searchBar.addEventListener('keyup', e => {
 
+  const term = e.target.value.toLowerCase();
+  const users = list.getElementsByTagName('li');
+  Array.from(users).forEach((user) => {
+
+    const name = user.firstElementChild.textContent;
+    // console.log(name);
+
+    if (name.toLowerCase().indexOf(term) != -1) {
+      user.style.display = 'flex';
+    } else {
+      user.style.display = 'none';
+    }
+  })
+})
+
+// GET() SearchBar
+let url = "https://cantinho-dos-travessos.firebaseio.com/cliente.json";
+
+fetch(url)
+  .then(response => {
+    return response.json();
+  })
+  .then(myJson => {
+    let clientes = myJson;
+    for (let i in clientes) {
+      let li = document.createElement("li");
+      li.innerHTML =
+        `
+            
+            <a href="#" onClick ='bodyContent("${clientes[i].name_pet}","${clientes[i].pet_description}","${clientes[i].nome_cliente}","${clientes[i].telefone}","${clientes[i].celular}","${clientes[i].email}","${clientes[i].whatsapp}")'>${clientes[i].nome_cliente}</a>
+            
+            
+            `;
+      list.appendChild(li);
+    }
+  });
+const petBox = document.querySelector('#pet-box');
+const ownerBox = document.querySelector('#owner-box');
+const h1 = document.createElement("h1");
+const h2 = document.createElement("h2");
+const h4 = document.createElement("h4");
+const span1 = document.createElement("span");
+const span2 = document.createElement("span");
+const span3 = document.createElement("span");
+const span4 = document.createElement("span");
+const bodyContent = (namePet, descriptionPet, nameOwner, phone1, phone2, email, zap) => {
+  h1.innerHTML = ` `;
+  h2.innerHTML = ` `;
+  h4.innerHTML = ` `;
+  span1.innerHTML = ` `;
+  span2.innerHTML = ` `;
+  span3.innerHTML = ` `;
+  span4.innerHTML = ` `;
+
+
+  h1.innerHTML = `${namePet}`;
+  h2.innerHTML = `${nameOwner}`;
+  h4.innerHTML = `${descriptionPet}`;
+  span1.innerHTML = `Telefone:&nbsp; ${phone1}`;
+  span2.innerHTML = `Celular:&nbsp; ${phone2}`;
+  span3.innerHTML = `Email:&nbsp; ${email} `;
+  span4.innerHTML = `Whatspp:&nbsp; ${zap}`;
+
+  petBox.appendChild(h1);
+  petBox.appendChild(h4);
+  ownerBox.appendChild(h2);
+  ownerBox.appendChild(span1);
+  ownerBox.appendChild(span2);
+  ownerBox.appendChild(span3);
+  ownerBox.appendChild(span4);
+}
+
+
+
+
+
+//TIMELINE
+//SHOW POPUP FORM
+const popUp = document.querySelector('#pop-up');
+const timelineContainer = document.querySelector('.container');
+const showPopUp = () => {
+  popUp.style.display = 'flex';
+}
+const closePopUp = () => {
+  popUp.style.display = 'none';
+}
+
+const appointmentForm = document.querySelector('#appointment_form');
+let appointmentInfo;
+
+//POST POPUP FORM
+function getForm() {
+  let dateAppoinment = appointmentForm.appointment_date.value;
+
+  let appointment = appointmentForm.appointment.value;
+
+  let description = appointmentForm.description.value;
+  appointmentInfo = {
+    "data_consulta": dateAppoinment,
+    "consulta": appointment,
+    "descricao_consulta": description
+  }
+  console.log(appointmentInfo);
+  return appointmentInfo;
+}
+
+//GET ACTUAL DATE
+function getToday() {
+  let date = new Date();
+  let day = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+
+  if (month < 10) month = "0" + month;
+  if (day < 10) day = "0" + day;
+
+  let today = year + "-" + month + "-" + day;
+  return today;
+}
+appointmentForm.appointment_date.value = getToday();
+document.getElementById('theDate').value = getToday();
+
+
+appointmentForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  getForm();
+  // console.log(JSON.stringify(customerInfo));
+  fetch(url, {
+    method: 'post',
+    body: JSON.stringify(customerInfo),
+    headers: {
+      'content-type': 'application/json'
+    }
+  }).then(function (response) {
+    return response.text();
+  }).then(function (text) {
+    console.log(text);
+  }).catch(console.error());
+});
+
+
+
+//UPDATE
+function update(id, data) {
+  fetch(apiUrl + "/" + id, {
+    method: 'PATCH',
+    body: JSON.stringify({
+      data
+    })
+  }).then((response) => {
+    response.json().then((response) => {
+      console.log(response);
+    })
+  }).catch(err => {
+    console.error(err)
+  })
+
+}
+//DELETE
+function remove(id) {
+  fetch(apiUrl + "/" + id, {
+    method: 'DELETE'
+  }).then(() => {
+    console.log('removed');
+  }).catch(err => {
+    console.error(err)
+  });
+}
+
+
+//MULTI-STEP COMPONENT
+let myFullForm = document.getElementById('login-form');
+let customerInfo;
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
@@ -94,22 +266,12 @@ function fixStepIndicator(n) {
   x[n].className += " active";
 }
 
-function getToday() {
-  let date = new Date();
-  let day = date.getDate();
-  let month = date.getMonth() + 1;
-  let year = date.getFullYear();
-
-  if (month < 10) month = "0" + month;
-  if (day < 10) day = "0" + day;
-
-  let today = year + "-" + month + "-" + day;
-  return today;
+const showForm = () => {
+  myFullForm.style.display = 'block';
 }
-document.getElementById('theDate').value = getToday();
-
-
-// LAST POST
+const closeForm = () => {
+  myFullForm.style.display = 'none';
+}
 
 myFullForm.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -156,32 +318,5 @@ function getForm() {
   return customerInfo;
 }
 
-// myFullForm.addEventListener("keyup", function () {
-//   myForm = [myFullForm.namePet.value, myFullForm.description.value, myFullForm.owner.value, myFullForm.mailOwner.value, myFullForm.address.value, myFullForm.phone.value, myFullForm.celphone.value, myFullForm.whatsapp.value, myFullForm.theDate.value];
 
-//   let petName = myFullForm.namePet.value;
-//   let petDescription = myFullForm.description.value;
-//   let nome_cliente = myFullForm.owner.value;
-//   let address = myFullForm.address.value;
-//   let phone = myFullForm.phone.value;
-//   let whatsapp = myFullForm.whatsapp.value;
-//   let email = myFullForm.mailOwner.value;
-//   let celular = myFullForm.celphone.value;
-//   let theDate = myFullForm.theDate.value;
 
-//   customerInfo = {
-//     "name_pet": petName,
-//     "pet_description": petDescription,
-//     "pet_description": petDescription,
-//     "pet-description": myFullForm.description.value,
-//     "address": address,
-//     "nome_cliente": nome_cliente,
-//     "email": email,
-//     "telefone": phone,
-//     "celular": celular,
-//     "whatsapp": whatsapp,
-//     "theDateRegister": theDate
-//   }
-//   console.log(customerInfo);
-//   return customerInfo;
-// });
