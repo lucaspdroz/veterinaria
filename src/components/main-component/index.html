@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../master.css">
+    <link rel="stylesheet" href="css/component.css">
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+</head>
+
+<body>
+    <form id="login-form" method="post">
+        <div class="contents-item">
+            <h1>Novo Usuário:</h1>
+            <div class="tab">
+                <p>Nome do Pet:<input id="namePet" placeholder="Nome do pet" type="text" oninput="this.className = ''"
+                        name="fname" autofocus></p>
+                <p>Descrição:</p>
+                <textarea id="description" class="textarea" placeholder="Descrição do pet" oninput="this.className = ''"
+                    name="lname" rows="5" cols="50"></textarea>
+            </div>
+            <div class="tab">
+                <p>Nome do dono:<input id="owner" placeholder="Nome do dono" oninput="this.className = ''" type="text"
+                        pname="owner" type="text">
+                </p>
+                <p>E-mail:<input id="mailOwner" placeholder="E-mail" type="email" oninput="this.className = ''"
+                        name="email"></p>
+                <p>Endereço:<input id="address" placeholder="Endereço" type="text" oninput="this.className = ''"
+                        id="pword"></p>
+            </div>
+            <div class="tab">Contato:
+                <p>Telefone:<input id="phone" placeholder="Telefone" oninput="this.className = ''" type="text"
+                        name="phone"></p>
+                <p>Celular:<input id="celphone" placeholder="Celeular" oninput="this.className = ''" type="text"
+                        name="celphone"></p>
+                <p>Watsapp:<input id="whatsapp" type="checkbox" placeholder="Telefone..." oninput="this.className = ''"
+                        name="whatsapp">
+                </p>
+            </div>
+            <div class="tab">
+                <img class="done-icon" src="../../../media/icons/checked.svg" alt="">
+                <input type="date" id="theDate" required="required" disabled>
+            </div>
+        </div>
+        <!-- Circles which indicates the steps of the form: -->
+        <div class="bottom-items">
+            <div class="steppers">
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+            </div>
+            <div class="myButtons">
+                <div style="float:right;">
+                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Voltar</button>
+                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Próximo</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+<script src="js/main.js"></script>
+<script src="../../../api/firebase.js"></script>
+
+</html>
