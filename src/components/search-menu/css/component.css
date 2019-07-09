@@ -1,10 +1,13 @@
-.container {
+
+/* MAIN COMPONENT */
+.main-container {
     display: flex;
     width: 100%;
     height: 100%;
     overflow: -moz-hidden-unscrollable;
 }
 
+/* SEARCH */
 .search-container{
     justify-content: center;
     flex-direction: column;
@@ -16,9 +19,23 @@
 
 .menu-search{
     display: flex;
-    padding-top: 4.5em;
+    padding-top: 0.1em;
 }
 
+.plus-paw{
+    display: flex;
+    margin: auto;
+    margin-top: 70px;
+    margin-right: 12px;
+    /* border: 1px solid black; */
+    width: 50px;
+    height: 50px;
+    background-image: url('../../../../media/icons/+Pata.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    cursor: pointer;
+}
 #search-bar{
     position: absolute;
     width: 223px;
@@ -139,3 +156,326 @@
     width: 100%;
     margin: 15px 5px;
 }
+
+/* TIMELINE */
+
+.timeline { 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    display: flex;
+    background-color: var(--disable);
+    /* min-width: 300px; */
+    width: 100%;
+    max-width: 1200px;
+    margin: 45px auto;
+    padding-top: 2px;
+    padding-bottom: 20px;
+    border-radius: 1%;
+  }
+  
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    top: 98px;
+    background-color: var(--primary);
+    bottom: 10px;
+    align-self: center;
+    /* filter: blur(10px); */
+  }
+  
+  .timeline h2 {
+    text-align: center;
+    margin-bottom: 33px;
+  }
+  
+  .timeline h4 {
+    margin: 0px;
+  }
+  
+  .btn_add {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    font-size: var(--s-small);
+    color: white;
+    /* padding: 12px; */
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+  }
+  
+  .container-timeline {
+    padding: 10px 40px;
+    min-width: 300px;
+    max-width: 1200px;
+    top: 10px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+  
+  .container-timeline::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: var(--white);
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    top: 50%;
+    right: -6px;
+    z-index: 1;
+  }
+  
+  .left {
+    left: 0;
+    text-align: right;
+  }
+  
+  .right {
+    left: 50%;
+  }
+  
+  .right::after {
+    left: -6px;
+  }
+  
+  .content {
+    padding: 10px 20px;
+    background-color: var(--white);
+    position: relative;
+    border-radius: 6px;
+  }
+  
+  #pop-up {
+    position: absolute;
+    display: none;
+    top: 10%;
+    left: 40%;
+    transform: translate(-40%, -10%);
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 5px;
+    width: 80%;
+    height: 390px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: var(--disable);
+    z-index: 5;
+  }
+  
+  #pop-up input {
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .close {
+    margin: auto;
+    margin-right: 0;
+    width: 25px;
+    height: 15px;
+    background: none;
+    font-weight: var(--bold);
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  
+  #pop-up input[type=date] {
+    margin: 0;
+    text-align: left;
+    width: 263px;
+    height: 32px;
+    padding: 0 0 0 78px;
+  }
+  
+  #pop-up input[type=text] {
+    margin: 10px 0;
+    width: 262px;
+    height: 32px;
+    padding: 0 15px;
+  }
+  
+  #pop-up textarea {
+    margin: 10px auto;
+    min-width: 100%;
+    height: 20vh;
+    resize: none;
+    border: none;
+  }
+  #pop-up button{
+    margin: auto 10px; 
+    background-color: #475DD2;
+    border-radius: 100px;
+    font-family: 'poppins';
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 17px;
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .timeline h2 {
+      text-align: left;
+      padding-left: 85px;
+      font-size: 1.5em;
+    }
+    .btn_add {
+      position: absolute;
+      left: 5px;
+      top: 15px;
+      z-index: 1;
+    }
+    .left {
+      text-align: left;
+    }
+    .timeline::after {
+      top: 60px;
+      left: 40.5px;
+    }
+    .container-timeline {
+      top: 20px;
+      width: 100%;
+      padding-left: 55px;
+      padding-right: 15px;
+    }
+    .left::after, .right::after {
+      left: 36.5px;
+    }
+    .right {
+      left: 0%;
+    }
+  }
+
+  /* Multi-Step Component */
+  #login-form {
+    position: absolute;
+    display: none;
+    top: 40%;
+    left: 50%;
+    transform: translate(-40%,-50%);
+    margin:auto;
+    background-color: #ffffff;
+    padding: 25px;
+    width: 500px;
+    height: 800px;
+    max-height: 540px;
+    min-width: 300px;
+    z-index: 5;
+  }
+  
+  .contents-item{
+    height: 329px;
+  }
+  
+  #login-form h1 {
+    text-align: center;
+  }
+  
+  #login-form input {
+    padding: 10px;
+    width: 100%;
+    font-size: 17px;
+    font-family: Raleway;
+    border: 1px solid #aaaaaa;
+  }
+  
+  /* Mark input boxes that gets an error on validation: */
+  
+  .bottom-items {
+    margin-bottom: 0;
+  }
+  
+  .done-icon{
+    margin: 0 35%;
+    margin-bottom: 47px;
+    width: 30%;
+  }
+  
+  #login-form input.invalid {
+    background-color: #ffdddd;
+  }
+  
+  ::placeholder {
+    font-family: 'poppins';
+  }
+  
+  #login-form input {
+    font-family: 'poppins';
+  }
+  
+  /* Hide all steps by default: */
+  
+  #nextBtn, #prevBtn {
+    width: 145px;
+    border: 1px solid #475DD2;
+  }
+  
+  #prevBtn {
+    color: #475DD2;
+    background: transparent;
+  }
+  
+  .tab {
+    display: none;
+  }
+  
+  .myButtons {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+  }
+  
+  #login-form textarea {
+    width: 100%;
+    resize: none;
+  }
+  
+  #login-form button {
+    background-color: #475DD2;
+    border-radius: 100px;
+    font-family: 'poppins';
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 17px;
+    cursor: pointer;
+  }
+  
+  #login-form button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Make circles that indicate the steps of the form: */
+  
+  .steppers {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #475DD2;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+  
+  .step.active {
+    opacity: 1;
+  }
+  
+  /* Mark the steps that are finished and valid: */
+  
+  .step.finish {
+    background-color: #475DD2;
+  }

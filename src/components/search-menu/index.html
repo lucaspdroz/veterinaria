@@ -13,9 +13,10 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="main-container">
         <div class="search-container">
             <input type="text" id="search-bar" placeholder="Pesquise aqui...">
+            <div class="plus-paw" onclick="showForm()"></div>
             <nav class="menu-search">
                 <ul id="ul-search">
                 </ul>
@@ -23,18 +24,8 @@
         </div>
         <div id="pet-container">
             <div id="pet-box">
-                <!-- <h1>Nome do pet</h1>
-                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet delectus qui cumque saepe! Laudantium</h3> -->
             </div>
-            
              <div id="owner-box">
-                <!-- 
-                    <h2>Dono</h2>
-                    <span>telefone</span>
-                    <span>celular</span>
-                    <span>email</span>
-                    <span>zapzap</span> 
-                 -->
             </div>
             <div id="owner-last-info">
                 <h3>Ultima consulta</h3>
@@ -44,8 +35,132 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, incidunt quis? Vitae, veniam vel quod animi ducimus doloremque cumque, tenetur sapiente neque illum deserunt voluptas eum autem fugit, ipsum consequuntur?
                 </p>
             </div>
+            <form id="login-form" method="post">
+                    <div class="close" onclick="closeForm()">X</div>
+                <div class="contents-item">
+                    <h1>Novo Usuário:</h1>
+                    <div class="tab">
+                        <p>Nome do Pet:<input id="namePet" placeholder="Nome do pet" type="text" oninput="this.className = ''"
+                                name="fname" autofocus></p>
+                        <p>Descrição:</p>
+                        <textarea id="description" class="textarea" placeholder="Descrição do pet" oninput="this.className = ''"
+                            name="lname" rows="5" cols="50"></textarea>
+                    </div>
+                    <div class="tab">
+                        <p>Nome do dono:<input id="owner" placeholder="Nome do dono" oninput="this.className = ''" type="text"
+                                pname="owner" type="text">
+                        </p>
+                        <p>E-mail:<input id="mailOwner" placeholder="E-mail" type="email" oninput="this.className = ''"
+                                name="email"></p>
+                        <p>Endereço:<input id="address" placeholder="Endereço" type="text" oninput="this.className = ''"
+                                id="pword"></p>
+                    </div>
+                    <div class="tab">Contato:
+                        <p>Telefone:<input id="phone" placeholder="Telefone" oninput="this.className = ''" type="text"
+                                name="phone"></p>
+                        <p>Celular:<input id="celphone" placeholder="Celeular" oninput="this.className = ''" type="text"
+                                name="celphone"></p>
+                        <p>Watsapp:<input id="whatsapp" type="checkbox" placeholder="Telefone..." oninput="this.className = ''"
+                                name="whatsapp">
+                        </p>
+                    </div>
+                    <div class="tab">
+                        <img class="done-icon" src="../../../media/icons/checked.svg" alt="">
+                        <input type="date" id="theDate" required="required" disabled>
+                    </div>
+                </div>
+                <!-- Circles which indicates the steps of the form: -->
+                <div class="bottom-items">
+                    <div class="steppers">
+                        <span class="step"></span>
+                        <span class="step"></span>
+                        <span class="step"></span>
+                        <span class="step"></span>
+                    </div>
+                    <div class="myButtons">
+                        <div style="float:right;">
+                            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Voltar</button>
+                            <button type="button" id="nextBtn" onclick="nextPrev(1)">Próximo</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="timeline">
+                <div id="pop-up">
+                    <form id="appointment_form" method="post">
+                        <div class="close" onclick="closePopUp()">X</div>
+                        <label for="appointment_date">Data da consulta: 
+                            <input type="date" name="appointment_date" id="appointment_date" disabled>
+                        </label> 
+                        <br>
+                        <label for="appointment">Procedimento:
+                            <input type="text" name="appointment" id="appointment">
+                        </label>
+                        <br>
+                        <label for="description">Descricao:
+                            <textarea name="description" id="description"></textarea>
+                        </label>
+                        <div class="myButtons">
+                            <button  id="save-btn">Salvar</button>
+                            <button  id="cancel-btn">Cancelar</button>
+                        </div>
+                    </form>    
+                </div>
+    
+    
+                <h2>Histórico do Paciente</h2>
+                <button class="btn_add btn-round-medium" onClick="showPopUp()">+</button>
+                <div class="container-timeline left">
+                    <div class="content">
+                        <h4>2019</h4>
+                        <h3>Tópico</h3>
+                        <div class="resumo">
+                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore et assumenda alias non
+                                beatae unde minima mollitia delectus ab odit! Ipsum repellendus pariatur nihil error
+                                consectetur neque consequuntur consequatur suscipit.</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="container-timeline right">
+                    <div class="content">
+                        <h4>2019</h4>
+                        <h3>Tópico</h3>
+                        <div class="resumo">
+                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore et assumenda alias non
+                                beatae unde minima mollitia delectus ab odit! Ipsum repellendus pariatur nihil error
+                                consectetur neque consequuntur consequatur suscipit .</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="container-timeline left">
+                    <div class="content">
+                        <h4>2019</h4>
+                        <h3>Tópico</h3>
+                        <div class="resumo">
+                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore et assumenda alias non
+                                beatae unde minima mollitia delectus ab odit! Ipsum repellendus pariatur nihil error
+                                consectetur neque consequuntur consequatur suscipit.</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="container-timeline right">
+                    <div class="content">
+                        <h4>2019</h4>
+                        <h3>Tópico</h3>
+                        <div class="resumo">
+                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore et assumenda alias non
+                                beatae unde minima mollitia delectus ab odit! Ipsum repellendus pariatur nihil error
+                                consectetur neque consequuntur consequatur suscipit.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+        </div>
+        
     <script src="js/main.js"></script>
 </body>
 </html>
