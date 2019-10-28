@@ -93,3 +93,6 @@ Tempo estimado de trabalho bruto: 6~8 meses
 
 |[<img src="https://avatars3.githubusercontent.com/u/48337261?s=460&v=4"><br><sub>@evandroLutz</sub>](https://github.com/evandroLutz) |
 | :---: |
+
+|[<img src="https://avatars1.githubusercontent.com/u/13020492?s=460&v=4"><br><sub>@nikolasFreitas</sub>](https://github.com/nikolasFreitas) |
+| :---: |
